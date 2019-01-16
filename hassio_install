@@ -4,7 +4,7 @@ set -e
 ARCH=$(uname -m)
 DOCKER_REPO=homeassistant
 DATA_SHARE=/usr/share/hassio
-URL_VERSION="https://s3.amazonaws.com/hassio-version/stable.json"
+URL_VERSION="https://github.com/hassbeat/hassio_install/blob/master/stable.json"
 URL_BIN_HASSIO="https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/files/hassio-supervisor"
 URL_BIN_APPARMOR="https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/files/hassio-apparmor"
 URL_SERVICE_HASSIO="https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/files/hassio-supervisor.service"
@@ -46,7 +46,7 @@ done
 
 # Generate hardware options
 case $ARCH in
-    "i386" | "i686")
+    "i386" | "i686"
         MACHINE=${MACHINE:=qemux86}
         HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
         HASSIO_DOCKER="$DOCKER_REPO/i386-hassio-supervisor"
